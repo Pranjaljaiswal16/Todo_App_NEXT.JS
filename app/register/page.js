@@ -36,18 +36,30 @@ export default function RegisterPage() {
                 ✓
               </div>
               <div>
-                <h1 className="text-lg font-bold tracking-tight text-white">Todo App</h1>
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-200/70">Get organized</p>
+                <h1 className="text-lg font-bold tracking-tight text-white">
+                  Todo App
+                </h1>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-200/70">
+                  Get organized
+                </p>
               </div>
             </div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Create your account</p>
-            <h2 className="text-3xl font-bold tracking-tight text-white">Start getting things done.</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-400">Set up your workspace and keep every task in sight.</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              Create your account
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white">
+              Start getting things done.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-400">
+              Set up your workspace and keep every task in sight.
+            </p>
           </header>
 
           <form onSubmit={handleRegister} className="space-y-5">
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-300">Name</label>
+              <label className="mb-2 block text-sm font-medium text-slate-300">
+                Name
+              </label>
               <input
                 type="text"
                 className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10"
@@ -57,7 +69,9 @@ export default function RegisterPage() {
               />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-300">Email</label>
+              <label className="mb-2 block text-sm font-medium text-slate-300">
+                Email
+              </label>
               <input
                 type="email"
                 className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10"
@@ -67,7 +81,9 @@ export default function RegisterPage() {
               />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-300">Password</label>
+              <label className="mb-2 block text-sm font-medium text-slate-300">
+                Password
+              </label>
               <input
                 type="password"
                 className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10"
@@ -86,7 +102,10 @@ export default function RegisterPage() {
 
           <p className="mt-7 text-center text-sm text-slate-400">
             Already have an account?{" "}
-            <Link href="/login" className="font-semibold text-cyan-300 transition hover:text-cyan-200 hover:underline cursor-pointer">
+            <Link
+              href="/login"
+              className="font-semibold text-cyan-300 transition hover:text-cyan-200 hover:underline cursor-pointer"
+            >
               Log in
             </Link>
           </p>
