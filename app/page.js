@@ -108,10 +108,16 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6">
       <div className="w-full max-w-lg">
+
+
+
+
         <header className="mb-8 flex justify-between items-center relative">
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
             My Todo App
           </h1>
+
+
           <div className="flex items-center gap-2">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -152,6 +158,8 @@ export default function Home() {
               )}
             </div>
           </div>
+
+          
         </header>
 
         <TodoForm addTodo={addTodo} />
@@ -164,6 +172,9 @@ export default function Home() {
             updateTodo={updateTodo}
           />
         </main>
+
+
+
       </div>
     </div>
   );
