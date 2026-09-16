@@ -18,47 +18,47 @@ const TodoList = ({ todos, deleteTodo, toggleTodo, updateTodo }) => {
 
   if (todos.length === 0) {
     return (
-      <div className="text-center p-8">
-        <p className="text-muted-foreground">No todos yet. Add one above!</p>
+      <div className="rounded-2xl border border-dashed border-slate-200 px-6 py-12 text-center dark:border-white/10">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">No tasks yet. Add your first one above!</p>
       </div>
     );
   }
 
   return (
     <div>
-      <div className="mb-4 flex justify-between items-center">
-        <div className="text-sm text-muted-foreground">
+      <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="text-sm text-slate-500 dark:text-slate-400">
           <span>{pendingCount} pending</span>
-          {completedCount > 0 && <span>, {completedCount} completed</span>}
+          {completedCount > 0 && <span> &middot; {completedCount} completed</span>}
         </div>
 
-        <div className="flex space-x-2 text-sm">
+        <div className="flex w-fit rounded-xl bg-slate-100 p-1 text-sm dark:bg-slate-950/60">
           <button
             onClick={() => setFilter("all")}
-            className={`px-2 py-1 rounded-md transition-colors ${
+            className={`rounded-lg px-3 py-1.5 transition-colors ${
               filter === "all"
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-muted"
+                ? "bg-white font-semibold text-slate-900 shadow-sm dark:bg-white/10 dark:text-white"
+                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
             }`}
           >
             All
           </button>
           <button
             onClick={() => setFilter("active")}
-            className={`px-2 py-1 rounded-md transition-colors ${
+            className={`rounded-lg px-3 py-1.5 transition-colors ${
               filter === "active"
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-muted"
+                ? "bg-white font-semibold text-slate-900 shadow-sm dark:bg-white/10 dark:text-white"
+                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
             }`}
           >
             Active
           </button>
           <button
             onClick={() => setFilter("completed")}
-            className={`px-2 py-1 rounded-md transition-colors ${
+            className={`rounded-lg px-3 py-1.5 transition-colors ${
               filter === "completed"
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-muted"
+                ? "bg-white font-semibold text-slate-900 shadow-sm dark:bg-white/10 dark:text-white"
+                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
             }`}
           >
             Completed
@@ -66,7 +66,7 @@ const TodoList = ({ todos, deleteTodo, toggleTodo, updateTodo }) => {
         </div>
       </div>
 
-      <ul className="space-y-3">
+      <ul className="space-y-2.5">
         <AnimatePresence>
           {filteredTodos.map((todo) => (
             <motion.li

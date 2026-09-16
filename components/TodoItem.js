@@ -34,15 +34,15 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
 
   return (
     <div
-      className={`p-4 rounded-lg border border-border group bg-card hover:border-primary/50 transition-all ${todo.completed ? "bg-opacity-70" : ""}`}
+      className={`group rounded-2xl border p-4 transition-all ${todo.completed ? "border-slate-200 bg-slate-50/70 dark:border-white/5 dark:bg-white/[0.03]" : "border-slate-200 bg-white hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 dark:border-white/10 dark:bg-slate-950/30 dark:hover:border-cyan-300/50"}`}
     >
       <div className="flex items-center gap-3">
         <button
           onClick={() => toggleTodo(todo.id)}
-          className={`flex justify-center items-center flex-shrink-0 w-5 h-5 rounded-md border transition-colors ${
+          className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md border transition-colors ${
             todo.completed
-              ? "bg-primary border-primary"
-              : "border-muted-foreground hover:border-primary"
+              ? "border-cyan-300 bg-cyan-300"
+              : "border-slate-300 hover:border-cyan-400 dark:border-slate-600 dark:hover:border-cyan-300"
           }`}
           aria-label={
             todo.completed ? "Mark as incomplete" : "Mark as complete"
@@ -61,30 +61,30 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
               onChange={(e) => setEditText(e.target.value)}
               onKeyDown={handleKeyDown}
               autoFocus
-              className="w-full p-0 bg-transparent border-0 border-b border-primary focus:outline-none focus:ring-0"
+              className="w-full border-0 border-b border-cyan-400 bg-transparent p-0 text-slate-900 outline-none focus:ring-0 dark:text-white"
             />
           </div>
         ) : (
           <p
-            className={`flex-1 transition-opacity ${todo.completed ? "line-through text-muted-foreground" : ""}`}
+            className={`flex-1 text-sm font-medium transition-opacity ${todo.completed ? "text-slate-400 line-through dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}
           >
             {todo.text}
           </p>
         )}
 
-        <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="flex items-center gap-1 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
           {isEditing ? (
             <>
               <button
                 onClick={handleSave}
-                className="p-1.5 rounded-md text-green-500 hover:bg-green-500/10 transition-colors"
+                className="rounded-lg p-1.5 text-emerald-500 transition-colors hover:bg-emerald-500/10"
                 aria-label="Save"
               >
                 <Check className="w-4 h-4" />
               </button>
               <button
                 onClick={handleCancel}
-                className="p-1.5 rounded-md text-red-500 hover:bg-red-500/10 transition-colors"
+                className="rounded-lg p-1.5 text-rose-500 transition-colors hover:bg-rose-500/10"
                 aria-label="Cancel"
               >
                 <X className="w-4 h-4" />
@@ -94,14 +94,14 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
             <>
               <button
                 onClick={handleEdit}
-                className="p-1.5 rounded-md text-blue-500 hover:bg-blue-500/10 transition-colors"
+                className="rounded-lg p-1.5 text-cyan-600 transition-colors hover:bg-cyan-500/10 dark:text-cyan-300"
                 aria-label="Edit todo"
               >
                 <PencilIcon className="w-4 h-4" />
               </button>
               <button
                 onClick={() => deleteTodo(todo.id)}
-                className="p-1.5 rounded-md text-red-500 hover:bg-red-500/10 transition-colors"
+                className="rounded-lg p-1.5 text-rose-500 transition-colors hover:bg-rose-500/10"
                 aria-label="Delete todo"
               >
                 <TrashIcon className="w-4 h-4" />
